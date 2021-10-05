@@ -1,0 +1,27 @@
+<div class="app">
+<header><strong>Make a donation</strong></header>
+<p>select the cause you wish to donate to</p>
+<!-- <button>{{donation.donationName}}</button> -->
+    <div *ngFor="let donation of makeDonationData">
+        <div class="button-box col-lg-12">
+        <button class="nav-link"  routerLinkActive="active" routerLink="/infoForm">
+            {{donation.donationName}}
+        </button>
+        </div>
+    </div>
+
+
+</div>
+<style>
+    .button-box {
+   text-align:center;
+   margin-top:20px;
+}
+.nav-link{
+    display: inline-block;
+       
+}
+.app{
+    text-align:center;
+}
+</style>

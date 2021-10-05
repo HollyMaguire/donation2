@@ -1,0 +1,70 @@
+<div class= giftPage>
+<p class="heading"><strong>Gifts</strong></p>
+<form >
+    <div class="check">Check for monthly recurring gift</div>
+        <div *ngFor="let donation of makeDonationData" class="container">
+            <label for="GeneralDonation">{{donation.donationName}}</label>
+            <input type="number" [formControl]="amount" id="GeneralDonation" /> 
+        <div class="checkbox"><input type="checkbox"> </div>
+    </div>
+
+   
+   <!-- <div class="container">
+        <label for="memorial">MEMORIAL GIFT</label>
+        <input type="number" [formControl]="giftFill" id="memorial" /> 
+    <div class="checkbox"><input type="checkbox"> </div>
+    </div> -->
+
+    <div class="formButtons">
+        <input class="nav-link" type="reset" value="Clear"> 
+        <!-- <div class="nav" routerLinkActive="active"> -->
+            <button (click) = "addDonation()" class="nav-link"  routerLinkActive="active">Submit</button></div>
+            <!-- <input  type="submit" value="Continue"> -->
+       
+        
+</form>
+</div>
+
+<style>
+.check{margin-left: 37%;
+    width: 100px;
+    display: inline-block;
+}
+.nav-link {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+.formButtons {
+    font-size: 16px;
+}
+
+.checkbox{
+    display: inline-block;
+    margin-left: 4%;
+}
+.heading{
+  font-size:30px;
+}
+.giftPage{
+    background: rgb(195,201,213);
+background: linear-gradient(90deg, rgba(195,201,213,1) 17%, rgba(133,161,215,1) 83%);
+    color:black;
+}
+label {
+        display: inline-block;
+        width: 200px;
+      }
+input[type=number], select {
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+div {
+ margin-bottom: 20px;
+    }
+
+</style>
+

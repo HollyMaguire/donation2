@@ -1,0 +1,106 @@
+<div class="formPage">
+<p class="heading"><strong>Personal Information</strong></p>
+<form>
+<div class="formContainer">
+<label  for="firstName">FIRST NAME: </label>
+<input id="firstName" type="text" [formControl]="firstName">
+</div>
+<div class="formContainer">
+<label for="lastName">LAST NAME: </label>
+<input id="lastName" type="text" [formControl]="lastName">
+</div>
+<div class="formContainer">
+<label for="cma">CMA#: </label>
+<input id="cma" type="text" [formControl]="formFill">
+</div>
+<div class="formContainer">
+<label for="phone">PHONE: </label>
+<input id="phone" type="text" [formControl]="formFill">
+</div>
+
+<div class="formContainer">
+<label for="email">EMAIL ADRESS: </label>
+<input id="email" type="text" [formControl]="formFill">
+</div>
+<div class="formContainer">
+<label for="adress1">ADdRESS 1: </label>
+<input id="adress1" type="text" [formControl]="formFill">
+</div>
+<div class="formContainer">
+<label for="adress2">ADRESS 2: </label>
+<input id="adress2" type="text" [formControl]="formFill">
+</div>
+
+<div class="formContainer">
+<label for="city">CITY: </label>
+<input id="city" type="text" [formControl]="formFill">
+</div>
+
+<div class="formContainer">
+<label for="state">STATE: </label>
+<input id="state" type="text" [formControl]="formFill">
+</div>
+<div class="formContainer">
+<label for="zip">ZIP/POSTAL CODE: </label>
+<input id="zip" type="text" [formControl]="formFill">
+</div>
+
+<div class="formContainer">
+<label for="country">COUNTRY: </label>
+<input id="country" type="text" [formControl]="formFill">
+</div>
+<div class="formContainer">
+<label for="urbanization">URBANIZATION*: </label>
+<input id="urbanization" type="text" [formControl]="formFill">
+
+<p>*{{ "{if required for international adresses }" }}</p>
+</div>
+<div class="formButtons">
+<input type="reset" value="Clear">    
+<div class="btns">
+<button (click) = "AddDonation()" class="nav-link"  routerLinkActive="active" 
+[routerLink]="['/gift', this.firstName.value + this.lastName.value]">continue</button>
+</div>
+</div>
+</form>
+</div>
+
+<router-outlet></router-outlet> 
+
+<style>
+.formPage{
+  background: rgb(195,201,213);
+background: linear-gradient(90deg, rgba(195,201,213,1) 17%, rgba(133,161,215,1) 83%);
+    color:black;
+}
+
+.formButtons {
+    font-size: 23px;
+    text-align:center;
+    display: inline-block;
+}
+.btns{
+  font-size: 16px;
+  text-align:center;
+  display: inline-block;
+}
+.heading{
+  font-size:30px;
+  text-align: center;
+}
+
+input[type=text], select {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label {
+        display: inline-block;
+        width: 150px;
+      }
+
+</style>

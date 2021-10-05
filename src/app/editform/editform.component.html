@@ -1,0 +1,74 @@
+<p class="heading"><strong>User Information</strong></p>
+<form [formGroup]="exform">
+
+    <div class="formContainer">
+        <label> Username: </label>
+        <input formControlName="validation_username" type="text" class ="form-control" [(ngModel)] = "username" placeholder = "Enter Username">
+        <small *ngIf="exform.get('validation_username')?.invalid" class="text-danger">Username is required</small>
+    </div>
+
+    <div class="formContainer">
+        <label> First Name: </label>
+        <input formControlName="validation_name" type="text" class ="form-control" [(ngModel)] = "first_name" placeholder = "Enter First Name">
+        <small *ngIf="exform.get('validation_name')?.invalid" class="text-danger">Name is required</small>
+    </div>
+
+    <div class="formContainer">
+        <label> Last Name: </label>
+        <input formControlName="validation_last" type="text" class ="form-control" [(ngModel)] = "last_name" placeholder = "Enter Last Name">
+        <small *ngIf="exform.get('validation_last')?.invalid" class="text-danger">Last name is required</small>
+    </div>
+
+    <div class="formContainer">
+        <label> Email: </label>
+        <input formControlName="validation_email" type="text" class ="form-control" [(ngModel)] = "email" placeholder = "Enter Email">
+        <small *ngIf="exform.get('validation_email')?.invalid" class="text-danger">Email is required</small>
+    </div>
+
+    <div class="formContainer">
+        <label> Password: </label>
+        <input formControlName="validation_password" type="text" class ="form-control" [(ngModel)] = "password" placeholder = "Enter password">
+        <small *ngIf="exform.get('validation_password')?.invalid" class="text-danger">Password is required</small>
+    </div>
+
+    <div class="formContainer">
+        <label> Role: </label>
+        <input formControlName="validation_role" type="text" class ="form-control" [(ngModel)] = "role" placeholder = "Enter role: admin/user">
+        <small *ngIf="exform.get('validation_role')?.invalid" class="text-danger">Role is required (admin/user)</small>
+    </div>
+
+    <button (click) = "AddUser()"  *ngIf="dep.id==0" class="btn btn-primary" value="Add/Update">Add</button>
+    <button (click) = "UpdateUser()"  *ngIf="dep.id!=0" class="btn btn-primary" value="Add/Update">Update</button>
+
+
+
+</form>
+<style>
+.EditPage{
+  background: rgb(195,201,213);
+background: linear-gradient(90deg, rgba(195,201,213,1) 17%, rgba(133,161,215,1) 83%);
+    color:black;
+}
+
+
+.formButtons {
+    font-size: 16px;
+    margin-left: 90%;
+}
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label {
+        display: inline-block;
+        width: 150px;
+      }
+.heading{
+  font-size:25px;
+}
+</style>

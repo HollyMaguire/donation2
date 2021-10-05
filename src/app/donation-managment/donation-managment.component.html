@@ -1,0 +1,22 @@
+<h1>Donation Managment</h1>
+  <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Donation Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let donation of donationdata; let i = index;">
+          
+          <td>{{donation.user_name}}</td>
+          <td>{{donation.date}}</td>
+          <td>{{donation.amount}}</td>
+          <td>{{donation.donation_type}}</td>
+        
+      </tbody>
+    </table>
+    <router-outlet></router-outlet>
+

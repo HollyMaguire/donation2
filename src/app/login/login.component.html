@@ -1,0 +1,25 @@
+<div class="login">
+  <h3>Login</h3>
+    <p><input [(ngModel)] = "input.username" placeholder = "Username" ></p>
+    <p><input [(ngModel)] = "input.password" type = "password" placeholder = "Password"></p>
+    <p><button (click) = "loginUser()" type="submit">Login</button></p>
+    
+<div>
+  <p><input [(ngModel)] = "register.username" placeholder = "Username" ></p>
+  <p><input [(ngModel)] = "register.first_name" placeholder = "First Name" ></p>
+  <p><input [(ngModel)] = "register.last_name" placeholder = "Last Name" ></p>
+  <p><input [(ngModel)] = "register.email" placeholder = "Email" ></p>
+  <p><input [(ngModel)] = "register.password" type = "password" placeholder = "Password"></p>
+  <p><input [(ngModel)] = "register.role" placeholder = "Role:admin/user"></p>
+  <p><button (click) = "registerUser()" type="submit">Register</button></p>
+</div>
+
+
+<style>
+
+.login{
+  background: rgb(195,201,213);
+background: linear-gradient(90deg, rgba(195,201,213,1) 17%, rgba(133,161,215,1) 83%);
+    color:black;
+}
+</style>
