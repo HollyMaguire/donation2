@@ -18,5 +18,10 @@ export class MakeDonationComponent implements OnInit {
       () => console.log("Completed"))
   }
 
+  
+  getDonationClick(donation:any){
+    console.log("DONATION TYPE: " + donation)
+    
+  }
 }
 
