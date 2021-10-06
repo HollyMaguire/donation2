@@ -1,19 +1,13 @@
-  <div class="formContainer">
+<div class="formPage">
+<p class="heading"><strong>Personal Information</strong></p>
+ 
+ <div class="formContainer">
       <label> TEST ID: </label>
       <input class ="form-control" [(ngModel)] = "user_id" placeholder = "Enter ID">
   </div>
 
-
-
 <div class="formPage">
-<p class="heading"><strong>Personal Information</strong></p>
 <form>
-
-
-<div>
-<label>Id number: </label>
-<input id="userId" type="text" >
-</div>
 
 <div class="formContainer">
 <label  for="firstName">FIRST NAME: </label>
@@ -33,11 +27,11 @@
 </div>
 
 <div class="formContainer">
-<label for="email">EMAIL ADRESS: </label>
+<label for="email">EMAIL ADDRESS: </label>
 <input id="email" type="text" >
 </div>
 <div class="formContainer">
-<label for="adress1">ADdRESS 1: </label>
+<label for="adress1">ADDRESS 1: </label>
 <input id="adress1" type="text" >
 </div>
 <div class="formContainer">
@@ -86,6 +80,16 @@
 <router-outlet></router-outlet> 
 
 <style>
+ .form-control{  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+    display: inline-block;
+        width: 150px;
+
+ }
 .formPage{
   background: rgb(195,201,213);
 background: linear-gradient(90deg, rgba(195,201,213,1) 17%, rgba(133,161,215,1) 83%);
