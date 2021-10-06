@@ -26,6 +26,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AuthguardService } from './auth.service';
 import { RedirectComponent } from './redirect/redirect.component';
 import { MakeDonationComponent } from './make-donation/make-donation.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -41,6 +42,7 @@ import { MakeDonationComponent } from './make-donation/make-donation.component';
     EditformComponent,
     RedirectComponent,
     MakeDonationComponent,
+    RegisterComponent,
     
   ],
   imports: [

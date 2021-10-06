@@ -1,22 +1,42 @@
 <div class="formPage">
 <p class="heading"><strong>Personal Information</strong></p>
  
+ 
  <div class="formContainer">
       <label> TEST ID: </label>
       <input class ="form-control" [(ngModel)] = "user_id" placeholder = "Enter ID">
+<!--     
+      <label> TEST ID: </label>
+      <input formControlName="validation_userId"  class ="form-control" [(ngModel)] = "user_id" placeholder = "Enter ID">
+      <small *ngIf="exform.get('validation_userId')?.invalid" class="text-danger">Id is required</small>
+    </div> -->
+
+
   </div>
-
 <div class="formPage">
-<form>
-
+<form [formGroup]="exform"> 
 <div class="formContainer">
-<label  for="firstName">FIRST NAME: </label>
-<input id="firstName" type="text" >
+
+
+<!-- <label  for="firstName">FIRST NAME: </label>
+<input id="firstName" type="text" > -->
+
+  <label> First Name: </label>
+  <input formControlName="validation_firstName" type="text" class ="form-control" [(ngModel)] = "firstName" placeholder = "Enter First Name">
+  <small *ngIf="exform.get('validation_firstName')?.invalid" class="text-danger">Name is required</small>
 </div>
+
+
+<!-- 
 <div class="formContainer">
 <label for="lastName">LAST NAME: </label>
 <input id="lastName" type="text">
-</div>
+</div> -->
+<label> Last Name: </label>
+<input formControlName="validation_lastName" type="text" class ="form-control" [(ngModel)] = "lastName" placeholder = "Enter Last Name">
+<small *ngIf="exform.get('validation_lastName')?.invalid" class="text-danger">Name is required</small>
+
+
 <div class="formContainer">
 <label for="cma">CMA#: </label>
 <input id="cma" type="text" >
@@ -27,9 +47,15 @@
 </div>
 
 <div class="formContainer">
+  <label> Email: </label>
+  <input formControlName="validation_email" type="text" class ="form-control" [(ngModel)] = "email" placeholder = "Enter Email">
+  <small *ngIf="exform.get('validation_email')?.invalid" class="text-danger">Email is required</small>
+</div>
+
+<!-- <div class="formContainer">
 <label for="email">EMAIL ADDRESS: </label>
 <input id="email" type="text" >
-</div>
+</div> -->
 <div class="formContainer">
 <label for="adress1">ADDRESS 1: </label>
 <input id="adress1" type="text" >
@@ -70,12 +96,9 @@
   <button (click) = "AddDonation(userId)" class="nav-link"  routerLinkActive="active" 
   [routerLink]="['/gift']">continue</button>
 </div>
-
 </div>
 </form>
 </div>
-
-
 
 <router-outlet></router-outlet> 
 

@@ -11,6 +11,7 @@ import { UserGuard } from './user.guard';
 import { EditformComponent } from './editform/editform.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { MakeDonationComponent } from './make-donation/make-donation.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path: 'infoForm', component: InfoFormComponent, canActivate:[UserGuard]},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'edit/:user_id', component: EditformComponent, canActivate:[UserGuard]},
   {path: 'edit', component: EditformComponent, canActivate:[UserGuard]},
   {path: 'thanks', component: RedirectComponent, canActivate:[UserGuard] },
-  {path: 'donate', component: MakeDonationComponent, canActivate:[UserGuard]}
+  {path: 'donate', component: MakeDonationComponent, canActivate:[UserGuard]},
+  {path: 'register', component: RegisterComponent}
   
 ];
 
