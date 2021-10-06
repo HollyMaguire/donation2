@@ -5,6 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DonationService } from '../donation.service';
 
+
 @Component({
   selector: 'app-gifts',
   templateUrl: './gifts.component.html',
@@ -13,6 +14,8 @@ import { DonationService } from '../donation.service';
 export class GiftsComponent implements OnInit {
   giftFill = new FormControl('');
   public amount = new FormControl("");
+  // public userId : Number;
+  // public donationId : Number;
     public makeDonationData: any;
     public errorMsg: any;
     name: string | null | undefined;
@@ -28,7 +31,18 @@ export class GiftsComponent implements OnInit {
        
     }
     addDonation(){
-      let vals = { user_name: this.name, userName: 3, donationType: 3, amount: this.amount.value}
+    //       {
+    //     "user_name": "dJane",
+    //     "donation_type": "memorial gift",
+    //     "amount": 123123,
+    //     "donationType": 5,
+    //     "userName": 30
+    // }
+
+
+      let vals = { user_name: "dJane", userName: 30 , 
+      "donationType": 5,
+      donation_type: "memorial gift", amount: this.amount.value}
       console.log(vals)
       this.donationService.addDonation(vals).subscribe(
         data => {
