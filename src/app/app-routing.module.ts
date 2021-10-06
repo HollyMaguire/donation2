@@ -13,15 +13,15 @@ import { RedirectComponent } from './redirect/redirect.component';
 import { MakeDonationComponent } from './make-donation/make-donation.component';
 
 const routes: Routes = [
-  {path: 'infoForm', component: InfoFormComponent},
-  {path: 'gift/:name', component: GiftsComponent},
+  {path: 'infoForm', component: InfoFormComponent, canActivate:[UserGuard]},
+  {path: 'gift', component: GiftsComponent, canActivate:[UserGuard]},
   {path:'users', component: UserManagmentComponent, canActivate:[UserGuard]},
   {path: '', component: DonationManagmentComponent, canActivate:[UserGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'edit/:user_id', component: EditformComponent, canActivate:[UserGuard]},
   {path: 'edit', component: EditformComponent, canActivate:[UserGuard]},
-  {path: 'thanks', component: RedirectComponent },
-  {path: 'donate', component: MakeDonationComponent}
+  {path: 'thanks', component: RedirectComponent, canActivate:[UserGuard] },
+  {path: 'donate', component: MakeDonationComponent, canActivate:[UserGuard]}
   
 ];
 

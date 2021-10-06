@@ -1,69 +1,87 @@
+  <div class="formContainer">
+      <label> TEST ID: </label>
+      <input class ="form-control" [(ngModel)] = "user_id" placeholder = "Enter ID">
+  </div>
+
+
+
 <div class="formPage">
 <p class="heading"><strong>Personal Information</strong></p>
 <form>
+
+
+<div>
+<label>Id number: </label>
+<input id="userId" type="text" >
+</div>
+
 <div class="formContainer">
 <label  for="firstName">FIRST NAME: </label>
-<input id="firstName" type="text" [formControl]="firstName">
+<input id="firstName" type="text" >
 </div>
 <div class="formContainer">
 <label for="lastName">LAST NAME: </label>
-<input id="lastName" type="text" [formControl]="lastName">
+<input id="lastName" type="text">
 </div>
 <div class="formContainer">
 <label for="cma">CMA#: </label>
-<input id="cma" type="text" [formControl]="formFill">
+<input id="cma" type="text" >
 </div>
 <div class="formContainer">
 <label for="phone">PHONE: </label>
-<input id="phone" type="text" [formControl]="formFill">
+<input id="phone" type="text" >
 </div>
 
 <div class="formContainer">
 <label for="email">EMAIL ADRESS: </label>
-<input id="email" type="text" [formControl]="formFill">
+<input id="email" type="text" >
 </div>
 <div class="formContainer">
 <label for="adress1">ADdRESS 1: </label>
-<input id="adress1" type="text" [formControl]="formFill">
+<input id="adress1" type="text" >
 </div>
 <div class="formContainer">
 <label for="adress2">ADRESS 2: </label>
-<input id="adress2" type="text" [formControl]="formFill">
+<input id="adress2" type="text">
 </div>
 
 <div class="formContainer">
 <label for="city">CITY: </label>
-<input id="city" type="text" [formControl]="formFill">
+<input id="city" type="text">
 </div>
 
 <div class="formContainer">
 <label for="state">STATE: </label>
-<input id="state" type="text" [formControl]="formFill">
+<input id="state" type="text">
 </div>
 <div class="formContainer">
 <label for="zip">ZIP/POSTAL CODE: </label>
-<input id="zip" type="text" [formControl]="formFill">
+<input id="zip" type="text" >
 </div>
 
 <div class="formContainer">
 <label for="country">COUNTRY: </label>
-<input id="country" type="text" [formControl]="formFill">
+<input id="country" type="text" >
 </div>
 <div class="formContainer">
 <label for="urbanization">URBANIZATION*: </label>
-<input id="urbanization" type="text" [formControl]="formFill">
+<input id="urbanization" type="text" >
 
 <p>*{{ "{if required for international adresses }" }}</p>
 </div>
 <div class="formButtons">
-<input type="reset" value="Clear">    
+<input type="reset" value="Clear">  
+
 <div class="btns">
-<button (click) = "AddDonation()" class="nav-link"  routerLinkActive="active" 
-[routerLink]="['/gift', this.firstName.value + this.lastName.value]">continue</button>
+  <button (click) = "AddDonation(userId)" class="nav-link"  routerLinkActive="active" 
+  [routerLink]="['/gift']">continue</button>
 </div>
+
 </div>
 </form>
 </div>
+
+
 
 <router-outlet></router-outlet> 
 

@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class ShareddataService {
 
   transfer_data: any;
+  transfer_donation: any;
 
   constructor() { }
 
@@ -15,6 +16,15 @@ export class ShareddataService {
 
   getData(){
     return this.transfer_data;
+  }
+
+  setDonation_id(data:any){
+    this.transfer_donation=data;
+    console.log("SET DATA FOR DONATION: " + this.transfer_donation)
+  }
+
+  getDonation_id(){
+    return this.transfer_donation;
   }
 
 }

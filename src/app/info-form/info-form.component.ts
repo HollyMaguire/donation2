@@ -5,35 +5,34 @@ import { ShareddataService } from '../shareddata.service';
 import { UserService } from '../user.service';
 
 @Component({
-  selector: 'app-info-form',
-  templateUrl: './info-form.component.html',
-  styleUrls: ['./info-form.component.css'],
-  providers: [DonationService, ShareddataService],
-})
-export class InfoFormComponent implements OnInit {
-  public formFill = new FormControl('');
+    selector: 'app-info-form',
+    templateUrl: './info-form.component.html',
+    styleUrls: ['./info-form.component.css'],
+    
+  })
+  export class InfoFormComponent implements OnInit {
+    
 
-  public firstName = new FormControl('');
-  public lastName = new FormControl('');
+    public firstName: any;
+    public lastName: any ;
+    userId: any;
+    user_id: any;
 
-  donations:any;
-  constructor(private donationService: DonationService, 
-    private sharingService: ShareddataService) { }
+    donations:any;
+
+    constructor(private donationService: DonationService, 
+      private sharingService: ShareddataService) { }
 
 
 
-ngOnInit(): void {
+  ngOnInit(): void {
+
+  }
 
 
-}
-
-ngAfterViewInit(){
-this.donations = this.sharingService.getData();
-console.log(this.sharingService.getData());
-}
-
-AddDonation(){
-
-}
+  AddDonation(test_Id:any){
+    console.log("USER ID:  " + this.user_id)
+    this.sharingService.setData(this.user_id);
+  }
 
 }

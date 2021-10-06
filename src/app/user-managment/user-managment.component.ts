@@ -5,7 +5,6 @@ import { UserService } from '../user.service';
   selector: 'app-user-managment',
   templateUrl: './user-managment.component.html',
   styleUrls: ['./user-managment.component.css'],
-  providers: [UserService],
 })
 export class UserManagmentComponent implements OnInit {
     public userdata: any;

@@ -8,7 +8,7 @@ import { ShareddataService } from '../shareddata.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [RegisterUserService, ShareddataService]
+  
 })
 export class LoginComponent implements OnInit {
 
@@ -56,10 +56,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(){
-    // this.registerUserService.loginUser(this.input).subscribe(
-      console.log("THIS IS DATA")
-      this.sharingService.setData("hello")
-  
   
   
       this.registerUserService.loginUser(this.input).subscribe(
