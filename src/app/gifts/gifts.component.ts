@@ -40,8 +40,8 @@ export class GiftsComponent implements OnInit {
     // }
 
 
-      let vals = { user_name: "dJane", userName: 30 , 
-      "donationType": 5,
+    let vals = { user_name: this.name, userName: 30 , 
+      "donationType": 4,
       donation_type: "memorial gift", amount: this.amount.value}
       console.log(vals)
       this.donationService.addDonation(vals).subscribe(
