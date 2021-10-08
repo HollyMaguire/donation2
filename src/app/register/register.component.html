@@ -1,21 +1,50 @@
 <div class="regi">
 <p><strong>Register</strong></p>
 
-<div>
-    <p><input [(ngModel)] = "register.username" placeholder = "Username" ></p>
+
+<div class="regi">
+  <form [formGroup]="userForm" class="registercontainer" (ngSubmit)="register()">
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.user.errors }">
+      <p><input [(ngModel)] = "register.username" placeholder = "Username" ></p>
+    
+  
+    <div *ngIf="isSubmitted && formControls.user.errors" class="help-block">
+      <div *ngIf="formControls.user.errors.required">user is required</div>
+    </div>
+    <!-- <p><input [(ngModel)] = "register.username" placeholder = "Username" ></p> -->
     <p><input [(ngModel)] = "register.first_name" placeholder = "First Name" ></p>
     <p><input [(ngModel)] = "register.last_name" placeholder = "Last Name" ></p>
     <p><input [(ngModel)] = "register.email" placeholder = "Email" ></p>
-    <p><input [(ngModel)] = "register.password" type = "password" placeholder = "Password"></p>
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+      <p><input [(ngModel)] = "register.password" type = "password" placeholder = "Password"></p>
+    
+  
+    <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+      <div *ngIf="formControls.password.errors.required">Password is required</div>
+    </div>
+  
+<!--   
+    <p><input [(ngModel)] = "register.password" type = "password" placeholder = "Password"></p> -->
+
     <p><input [(ngModel)] = "register.role" placeholder = "Role:admin/user"></p>
     <p><button (click) = "registerUser()" type="submit">Register</button></p>
+ 
+
+  </form>
   </div>
 </div>
+
 
 <style>
 .regi{background: rgb(195,201,213);
 background: linear-gradient(90deg, rgba(195,201,213,1) 17%, rgba(133,161,215,1) 83%);
     color:black;
+}
+.has-error input[type="user"],
+.has-error input[type="password"] {
+    border-color: rgb(216, 12, 12);
+    color: rgb(230, 14, 14);
 }
 </style>
 

@@ -15,10 +15,18 @@ export class AppComponent {
     private router:Router) {
   }
 
-  logout() {
-    this.authService.logoutUser();
+
+  logout(){
+    this.authService.logout();
     this.router.navigate(['login']);
+    this.router.navigateByUrl('/login');
   }
 
-  
 }
+
+  // logout() {
+  //   this.authService.logoutUser();
+  //   this.router.navigate(['login']);
+  // }
+
+  

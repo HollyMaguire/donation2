@@ -13,8 +13,6 @@ export class UserService {
 
   constructor(private http: HttpClient){ }
 
-
-
   
   getUserList(): Observable<IUser[]>{
     return this.http.get<IUser[]>(this._url + "/users/")

@@ -3,14 +3,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthguardService } from '../auth.service';
 import { RegisterUserService } from '../register-user.service';
 import { ShareddataService } from '../shareddata.service';
-import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
+  
 })
-export class RegisterComponent implements OnInit {
+export class LoginComponent implements OnInit {
+
   register: any; 
   input: any;
   donations:any;
@@ -24,12 +25,7 @@ export class RegisterComponent implements OnInit {
               private router: Router, 
               private activatedRoute: ActivatedRoute,
               private registerUserService: RegisterUserService,
-              private sharingService: ShareddataService,
-              private formBuilder: FormBuilder ) {}
-  
-  userForm!: FormGroup
-isSubmitted  =  false;
-
+              private sharingService: ShareddataService) {}
 
   ngOnInit() {
     this.sharingService.setData(this.input);
@@ -40,8 +36,6 @@ isSubmitted  =  false;
       email: '',
       password: '',
       role: ''
-      
-      
     };
 
     this.input = {
@@ -49,29 +43,49 @@ isSubmitted  =  false;
       password: '',
     }
 
-    this.userForm  =  this.formBuilder.group({
-      user: ['', Validators.required],
-      password: ['', Validators.required]
+  } 
 
-  });
-}
-get formControls() { return this.userForm.controls; }
-
-  
-onSubmit(){
-  if(this.userForm.valid){
-    alert('new user created!')
-  } else {
-    alert('missing fields!')
-  }
-}
   registerUser(){
     this.registerUserService.registerNewUser(this.register).subscribe(
       response => {
         console.log(response);
         alert('User ' + this.register.first_name + ' has been created!');
       },
-      error => console.log('error missing field', error)
+      error => console.log('error', error)
     );
   }
+
+  loginUser(){
+  
+  
+      this.registerUserService.loginUser(this.input).subscribe(
+
+      response => {
+        this.authService.login();
+        this.router.navigate( [this.retUrl]);
+        alert('You succesfully Loged in!')
+      },
+      
+      error => {
+        alert('Wrong Credentials!');
+        this.router.navigate( ['login']);
+      }
+    
+    );
+  }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

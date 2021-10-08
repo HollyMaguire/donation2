@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DonationService } from '../donation.service';
 import { ShareddataService } from '../shareddata.service';
-import { UserService } from '../user.service';
 import { Validators } from '@angular/forms';
+import { UserService } from '../user.service';
 
 @Component({
     selector: 'app-info-form',

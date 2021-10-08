@@ -27,6 +27,8 @@ import { AuthguardService } from './auth.service';
 import { RedirectComponent } from './redirect/redirect.component';
 import { MakeDonationComponent } from './make-donation/make-donation.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -43,6 +45,8 @@ import { RegisterComponent } from './register/register.component';
     RedirectComponent,
     MakeDonationComponent,
     RegisterComponent,
+    AdminComponent,
+    LogoutComponent,
     
   ],
   imports: [

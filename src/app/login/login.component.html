@@ -1,17 +1,65 @@
+<div class="loginP">
+<h1 style="text-align:center">
+ Login 
+</h1>
 <div class="login">
+  
+  <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.user.errors }">
+      <input type="user" placeholder="user" formControlName="user">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.user.errors" class="help-block">
+      <div *ngIf="formControls.user.errors.required">user is required</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+      <input type="password" placeholder="Password" formControlName="password">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+      <div *ngIf="formControls.password.errors.required">Password is required</div>
+    </div>
+
+    <p>
+      <input type="submit" value="Log in">
+    </p>
+  </form>
+</div>
+<div>
+ <div class ="btnco">
+  <button class="nav-link"  routerLinkActive="active" routerLink="/register">Register</button>
+</div>
+</div>
+</div>
+
+
+<style>
+.btnco{
+
+  margin: 0 47% ;
+
+}
+  .loginP{
+    background: rgb(195,201,213);
+  background: linear-gradient(90deg, rgba(195,201,213,1) 17%, rgba(133,161,215,1) 83%);
+      color:black;
+  }
+  </style> 
+
+
+
+
+<!-- original -->
+<!-- <div class="login">
   <h3>Login</h3>
     <p><input [(ngModel)] = "input.username" placeholder = "Username" ></p>
     <p><input [(ngModel)] = "input.password" type = "password" placeholder = "Password"></p>
     <p><button (click) = "loginUser()" type="submit">Login</button></p>
     
 <div>
-  <!-- <p><input [(ngModel)] = "register.username" placeholder = "Username" ></p>
-  <p><input [(ngModel)] = "register.first_name" placeholder = "First Name" ></p>
-  <p><input [(ngModel)] = "register.last_name" placeholder = "Last Name" ></p>
-  <p><input [(ngModel)] = "register.email" placeholder = "Email" ></p>
-  <p><input [(ngModel)] = "register.password" type = "password" placeholder = "Password"></p>
-  <p><input [(ngModel)] = "register.role" placeholder = "Role:admin/user"></p> -->
-
+ 
   <button class="nav-link"  routerLinkActive="active" routerLink="/register">Register</button>
   
 </div>
@@ -24,4 +72,4 @@
 background: linear-gradient(90deg, rgba(195,201,213,1) 17%, rgba(133,161,215,1) 83%);
     color:black;
 }
-</style>
+</style> -->
